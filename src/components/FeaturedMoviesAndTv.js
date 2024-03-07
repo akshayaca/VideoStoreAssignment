@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const FeaturedMoviesAndTVShows = () => {
     const [featuredMovies, setFeaturedMovies] = useState([]);
@@ -6,30 +6,29 @@ const FeaturedMoviesAndTVShows = () => {
     const [selectedMovieId, setSelectedMovieId] = useState(null);
     const [selectedShowId, setSelectedShowId] = useState(null);
     const [error, setError] = useState(null);
+    const moviesContainerRef = useRef(null);
+    const showsContainerRef = useRef(null);
 
     useEffect(() => {
         // Fetch data from fake API for featured movies
         fetch('http://localhost:3001/featuredMovies')
             .then(response => response.json())
             .then(data => setFeaturedMovies(data))
-            .catch(error => setError(error)); 
+            .catch(error => setError(error));
 
         // Fetch data from fake API for featured TV shows
         fetch('http://localhost:3001/featuredTVShows')
             .then(response => response.json())
             .then(data => setFeaturedTVShows(data))
-            .catch(error => setError(error)); 
+            .catch(error => setError(error));
 
         // Event listener to reset selected movie/show ID when clicked outside the cards
         const handleClickOutside = (event) => {
-            const moviesContainer = document.getElementById('featured-movies-container');
-            const showsContainer = document.getElementById('featured-shows-container');
-
-            if (!moviesContainer.contains(event.target)) {
+            if (moviesContainerRef.current && !moviesContainerRef.current.contains(event.target)) {
                 setSelectedMovieId(null);
             }
 
-            if (!showsContainer.contains(event.target)) {
+            if (showsContainerRef.current && !showsContainerRef.current.contains(event.target)) {
                 setSelectedShowId(null);
             }
         };
@@ -56,7 +55,7 @@ const FeaturedMoviesAndTVShows = () => {
     return (
         <div className="bg-black p-6">
             <h2 className="text-white text-2xl font-bold mb-4">Featured Movies</h2>
-            <div id="featured-movies-container" className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
+            <div ref={moviesContainerRef} className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
                 {featuredMovies.map(movie => (
                     <div key={movie.id} className="bg-black border border-black mx-1 my-1 flex flex-col items-center shadow-neon-blue cursor-pointer card " style={{ minWidth: '250px', maxWidth: '250px' }} onClick={() => handleMovieClick(movie.id)}>
                         {selectedMovieId === movie.id ? (
@@ -72,11 +71,11 @@ const FeaturedMoviesAndTVShows = () => {
             </div>
 
             <h2 className="text-white text-2xl font-bold mt-8 mb-4">Featured TV Shows</h2>
-            <div id="featured-shows-container" className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
+            <div ref={showsContainerRef} className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
                 {featuredTVShows.map(show => (
                     <div key={show.id} className="bg-black border border-black mx-1 my-1 flex flex-col items-center shadow-neon-blue cursor-pointer card " style={{ minWidth: '250px', maxWidth: '250px' }} onClick={() => handleShowClick(show.id)}>
                         {selectedShowId === show.id ? (
-                            <p className="text-white p-2">{show.description}</p> 
+                            <p className="text-white p-2">{show.description}</p>
                         ) : (
                             <>
                                 <img src={show.poster} alt={show.title} className="w-full h-full object-cover" />
