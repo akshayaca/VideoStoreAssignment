@@ -3,64 +3,76 @@
     {
       "id": 1,
       "title": "Movie 1",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for Movie 1"
     },
     {
       "id": 2,
       "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for Movie 2"
     },
     {
       "id": 3,
       "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for Movie 3"
     },
     {
       "id": 4,
       "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for Movie 4"
     },
     {
       "id": 5,
       "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for Movie 5"
     },
     {
       "id": 6,
       "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for Movie 6"
     }
   ],
   "featuredTVShows": [
     {
       "id": 1,
       "title": "TV Show 1",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for TV Show 1"
     },
     {
       "id": 2,
       "title": "TV Show 2",
-      "poster": "Images/Avengers.jpg"
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for TV Show 2"
     },
     {
       "id": 3,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "title": "TV Show 3",
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for TV Show 3"
     },
     {
       "id": 4,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "title": "TV Show 4",
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for TV Show 4"
     },
     {
       "id": 5,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "title": "TV Show 5",
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for TV Show 5"
     },
     {
       "id": 6,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg"
+      "title": "TV Show 6",
+      "poster": "Images/Avengers.jpg",
+      "description": "Description for TV Show 6"
     }
   ]
 }
