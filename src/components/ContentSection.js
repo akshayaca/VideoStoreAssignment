@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import movieImage1 from '../img/Avengers.jpg';
 
 const ContentSection = () => {
@@ -15,6 +15,7 @@ const ContentSection = () => {
         { id: 10, title: 'Toy Story 4', description: 'Description for Toy Story 4' },
     ]);
     const [selectedItemId, setSelectedItemId] = useState(null);
+    const containerRef = useRef(null);
 
     const handleItemClick = (id) => {
         setSelectedItemId(selectedItemId === id ? null : id);
@@ -22,14 +23,13 @@ const ContentSection = () => {
 
     // Event listener to reset selected item ID when clicked outside the container
     const handleClickOutside = (event) => {
-        const container = document.getElementById('content-section-container');
-        if (container && !container.contains(event.target)) {
+        if (containerRef.current && !containerRef.current.contains(event.target)) {
             setSelectedItemId(null);
         }
     };
 
     // Add event listener on component mount
-    React.useEffect(() => {
+    useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             // Remove event listener on component unmount
@@ -38,7 +38,7 @@ const ContentSection = () => {
     }, []);
 
     return (
-        <div className="bg-black p-6" id="content-section-container">
+        <div className="bg-black p-6" ref={containerRef}>
             <h2 className="text-white text-2xl font-bold mb-4">Movies and TV Shows Watched Together</h2>
             <div className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
                 {watchedTogether.map(item => (
@@ -56,17 +56,17 @@ const ContentSection = () => {
             </div>
 
             <div className="mt-12 bg-dark px-6 md:mx-auto md:w-full lg:max-w-screen-xl lg:mx-0">
-            {/* Align "Exclusive Subscription" to the left */}
-            <h2 className="text-white text-2xl font-bold mb-2 lg:mb-0 lg:pb-6">Exclusive Subscription</h2> 
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:gap-8">
-                <div className="flex-grow bg-black p-0 text-justify">
-                    {/* "Ultimate Flexibility Package..." starts here aligned with "Exclusive Subscription" */}
-                    <h3 className="text-white text-lg font-bold mb-1">Ultimate Flexibility Package for Busy Couples</h3>
-                    <p className="text-white mb-2">Are you and your partner struggling to find time for movie nights amidst your hectic schedules? Say goodbye to rushing through movies and hello to uninterrupted quality time together with our Ultimate Flexibility Package!</p>
-                    <p className="text-white">Enjoy unrestricted access to our extensive video library for an extended period each day or week, giving you the flexibility to watch movies whenever it suits you best. Whether it's a quick mid-week pick-me-up or a leisurely weekend binge, the choice is yours!</p>
+                {/* Align "Exclusive Subscription" to the left */}
+                <h2 className="text-white text-2xl font-bold mb-2 lg:mb-0 lg:pb-6">Exclusive Subscription</h2> 
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:gap-8">
+                    <div className="flex-grow bg-black p-0 text-justify">
+                        {/* "Ultimate Flexibility Package..." starts here aligned with "Exclusive Subscription" */}
+                        <h3 className="text-white text-lg font-bold mb-1">Ultimate Flexibility Package for Busy Couples</h3>
+                        <p className="text-white mb-2">Are you and your partner struggling to find time for movie nights amidst your hectic schedules? Say goodbye to rushing through movies and hello to uninterrupted quality time together with our Ultimate Flexibility Package!</p>
+                        <p className="text-white">Enjoy unrestricted access to our extensive video library for an extended period each day or week, giving you the flexibility to watch movies whenever it suits you best. Whether it's a quick mid-week pick-me-up or a leisurely weekend binge, the choice is yours!</p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 };
