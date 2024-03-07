@@ -14,7 +14,7 @@ module.exports = {
         'custom-link': '#666', // Default link color
         'link-hover': '#000', // Link hover color
         'custom-white': '#ffffff', // Text color
-        'custom-magenta': 'magenta', // Hover color and search input color
+        'custom-pink': '#FF3399', // Hover color and search input color
       },
     },
   },

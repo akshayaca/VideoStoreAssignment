@@ -8,3 +8,21 @@
     flex-direction: column;
     justify-content: space-between;
   }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; 
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+  .shadow-neon-blue {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 255, 0.782);
+  } 
+  .card {
+    transition: transform 0.3s ease-in-out; 
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+  }
