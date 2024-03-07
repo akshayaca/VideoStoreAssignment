@@ -1,0 +1,66 @@
+{
+  "featuredMovies": [
+    {
+      "id": 1,
+      "title": "Movie 1",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    }
+  ],
+  "featuredTVShows": [
+    {
+      "id": 1,
+      "title": "TV Show 1",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 2,
+      "title": "TV Show 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Movie 2",
+      "poster": "Images/Avengers.jpg"
+    }
+  ]
+}

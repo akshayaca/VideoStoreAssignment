@@ -1,15 +1,15 @@
 import React, { useRef } from 'react';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
-import movieImage1 from '../Images/Hero Card/Avengers.jpg'; 
-import movieImage2 from '../Images/Hero Card/Avengers.jpg'; 
-import movieImage3 from '../Images/Hero Card/Avengers.jpg';
-import movieImage4 from '../Images/Hero Card/Avengers.jpg';
-import movieImage5 from '../Images/Hero Card/Avengers.jpg';
-import movieImage6 from '../Images/Hero Card/Avengers.jpg';
-import movieImage7 from '../Images/Hero Card/Avengers.jpg';
-import movieImage8 from '../Images/Hero Card/Avengers.jpg';
-import movieImage9 from '../Images/Hero Card/Avengers.jpg';
-import movieImage10 from '../Images/Hero Card/Avengers.jpg';
+import movieImage1 from   '../img/Avengers.jpg'
+import movieImage2 from '../img/Breaking Bad.jpg'; 
+import movieImage3 from '../img/Game of Thrones.jpg';
+import movieImage4 from '../img/Inception.jpg';
+import movieImage5 from '../img/StarWars.jpg';
+import movieImage6 from '../img/Stranger Things.jpg';
+import movieImage7 from '../img/The Crown.jpg';
+import movieImage8 from '../img/The Lion King.jpg';
+import movieImage9 from '../img/The Mandalorian.jpg';
+import movieImage10 from '../img/ToyStory4.jpg';
 
 const Hero = () => {
     const imagesRef = useRef(null);
