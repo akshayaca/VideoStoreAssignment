@@ -19,7 +19,26 @@ const FeaturedMoviesAndTVShows = () => {
             .then(response => response.json())
             .then(data => setFeaturedTVShows(data))
             .catch(error => setError(error)); 
-            
+
+        // Event listener to reset selected movie/show ID when clicked outside the cards
+        const handleClickOutside = (event) => {
+            const moviesContainer = document.getElementById('featured-movies-container');
+            const showsContainer = document.getElementById('featured-shows-container');
+
+            if (!moviesContainer.contains(event.target)) {
+                setSelectedMovieId(null);
+            }
+
+            if (!showsContainer.contains(event.target)) {
+                setSelectedShowId(null);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
     }, []);
 
     if (error) {
@@ -36,8 +55,8 @@ const FeaturedMoviesAndTVShows = () => {
 
     return (
         <div className="bg-black p-6">
-            <h2 className="text-white text-2xl mb-4">Featured Movies</h2>
-            <div className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
+            <h2 className="text-white text-2xl font-bold mb-4">Featured Movies</h2>
+            <div id="featured-movies-container" className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
                 {featuredMovies.map(movie => (
                     <div key={movie.id} className="bg-black border border-black mx-1 my-1 flex flex-col items-center shadow-neon-blue cursor-pointer card " style={{ minWidth: '250px', maxWidth: '250px' }} onClick={() => handleMovieClick(movie.id)}>
                         {selectedMovieId === movie.id ? (
@@ -52,8 +71,8 @@ const FeaturedMoviesAndTVShows = () => {
                 ))}
             </div>
 
-            <h2 className="text-white text-2xl mt-8 mb-4">Featured TV Shows</h2>
-            <div className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
+            <h2 className="text-white text-2xl font-bold mt-8 mb-4">Featured TV Shows</h2>
+            <div id="featured-shows-container" className="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto hide-scrollbar">
                 {featuredTVShows.map(show => (
                     <div key={show.id} className="bg-black border border-black mx-1 my-1 flex flex-col items-center shadow-neon-blue cursor-pointer card " style={{ minWidth: '250px', maxWidth: '250px' }} onClick={() => handleShowClick(show.id)}>
                         {selectedShowId === show.id ? (
