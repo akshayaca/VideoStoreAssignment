@@ -38,7 +38,7 @@ const MovieAndTVShowListing = () => {
                 {collection.map(item => (
                     <Link to={{ pathname: `/details/${item.id}`, state: { details: item } }} key={item.id} className="group">
                         <div className="bg-black border border-gray-800 mx-1 my-1 flex flex-col items-center shadow-neon-blue transform group-hover:scale-105 transition-transform duration-300 rounded-lg overflow-hidden card">
-                            <img src={item.smallPoster} alt={item.title} className="w-full object-cover" />
+                            <img src={item.smallPoster} alt={item.title} className="w-60 h-full object-contain" />
                             <p className="text-white font-semibold text-center p-2 truncate">{item.title}</p>
                         </div>
                     </Link>
