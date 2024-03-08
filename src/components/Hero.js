@@ -14,8 +14,8 @@ import movieImage10 from '../img/ToyStory4.jpg';
 const Hero = () => {
     const containerRef = useRef(null);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const cardWidth = 200; // Width of each card
-    const cardsToShow = 5; // Number of cards visible at once
+    const cardWidth = 200; 
+    const cardsToShow = 5; 
 
     const scrollLeft = () => {
         if (containerRef.current) {
@@ -40,11 +40,11 @@ const Hero = () => {
     };
 
     return (
-        <section className="w-full bg-black">
+        <section className="w-full bg-black"style={{ background: 'linear-gradient(to left, #191970, #000000)' }}>
             <div className="w-full p-6 text-white flex flex-col justify-center relative">
                 <h1 className="text-3xl font-bold justify-center mb-4 text-center">Most Demanded Movies and TV Shows All Time</h1>
                 <div className="relative overflow-hidden mx-auto max-w-screen-lg">
-                    <FaArrowAltCircleLeft onClick={scrollLeft} className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 text-white text-3xl cursor-pointer"/>
+                    <FaArrowAltCircleLeft onClick={scrollLeft} className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 text-black text-3xl cursor-pointer"/>
                     <div ref={containerRef} className="flex gap-2 overflow-x-auto py-2" style={{ scrollbarWidth: 'none' }}>
                         <img src={movieImage1} alt="Movie Poster 1" className="min-w-[20%] card" />
                         <img src={movieImage2} alt="Movie Poster 2" className="min-w-[20%] card" />
@@ -57,7 +57,7 @@ const Hero = () => {
                         <img src={movieImage9} alt="Movie Poster 2" className="min-w-[20%] card" />
                         <img src={movieImage10} alt="Movie Poster 2" className="min-w-[20%] card" />
                     </div>
-                    <FaArrowAltCircleRight onClick={scrollRight} className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 text-white text-3xl cursor-pointer" />
+                    <FaArrowAltCircleRight onClick={scrollRight} className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 text-black text-3xl cursor-pointer" />
                 </div>
             </div>
         </section>

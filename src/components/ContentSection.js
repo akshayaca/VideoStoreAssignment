@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory for navigation
+import { useHistory } from 'react-router-dom';
 import m1 from '../img/Schitts Creek.jpg';
 import m2 from '../img/The Blind Side.jpg';
 import m3 from '../img/The Good Place.jpg';
@@ -20,14 +20,14 @@ const ContentSection = () => {
 ]);
     const [selectedItemId, setSelectedItemId] = useState(null);
     const containerRef = useRef(null);
-    const history = useHistory(); // Use useHistory hook for navigation
+    const history = useHistory(); 
     const scrollContainerRef = useRef(null);
     const [isHovering, setIsHovering] = useState(false);
 
 
   
     const navigateToMovieListing = () => {
-        history.push('/moviestvlisting'); // Adjust the path as needed for your routing
+        history.push('/moviestvlisting'); 
     };
 
     useEffect(() => {
@@ -60,21 +60,20 @@ const ContentSection = () => {
             </div>
             <div className={`absolute right-0 top-0 bottom-0 w-14 bg-gradient-to-l from-transparent to-black ${!isHovering && 'hidden'}`} />
             <div className="absolute right-0 top-0 bottom-0 flex items-center justify-center px-4 cursor-pointer" onClick={navigateToMovieListing}>
-                <span className="text-white text-xl">•••</span> {/* View More Icon */}
+                <span className="text-white text-xl">•••</span> 
             </div>
         </div>
           
-        <div className="mt-12 bg-dark px-6 md:px-4 lg:px-10 text-center mx-auto" style={{ maxWidth: '1200px' }}> {/* Ensure margin auto and maximum width */}
-        <h2 className="text-white text-2xl font-bold mb-2 lg:mb-0 lg:pb-6">Exclusive Subscription</h2>
-        <div className="flex flex-col items-center justify-center lg:gap-8"> {/* Ensure flex items are centered */}
-            <div className="px-4" style={{ maxWidth: '800px' }}> {/* Control the maximum width of text container */}
-                <h3 className="text-white font-bold mb-1">Ultimate Flexibility Package for Busy Couples</h3>
-                <p className="text-white mb-2">Are you and your partner struggling to find time for movie nights amidst your hectic schedules? Say goodbye to rushing through movies and hello to uninterrupted quality time together with our Ultimate Flexibility Package!</p>
-                <p className="text-white">Enjoy unrestricted access to our extensive video library for an extended period each day or week, giving you the flexibility to watch movies whenever it suits you best. Whether it's a quick mid-week pick-me-up or a leisurely weekend binge, the choice is yours!</p>
-            </div>
+        <div className="mt-12 text-center mx-auto px-6 md:px-4 lg:px-10" style={{ background: 'linear-gradient(to right, #191970, #000000)', maxWidth: 'full' }}> 
+    <h2 className="text-white text-2xl font-bold mb-2 lg:mb-0 lg:pb-6">Exclusive Subscription</h2>
+    <div className="flex flex-col items-center justify-center lg:gap-8"> 
+        <div className="px-4" style={{ maxWidth: '800px' }}>
+            <h3 className="text-white font-bold mb-1">Ultimate Flexibility Package for Busy Couples</h3>
+            <p className="text-white mb-2">Are you and your partner struggling to find time for movie nights amidst your hectic schedules? Say goodbye to rushing through movies and hello to uninterrupted quality time together with our Ultimate Flexibility Package!</p>
+            <p className="text-white">Enjoy unrestricted access to our extensive video library for an extended period each day or week, giving you the flexibility to watch movies whenever it suits you best. Whether it's a quick mid-week pick-me-up or a leisurely weekend binge, the choice is yours!</p>
         </div>
     </div>
-    
+</div>
     
     
         </div>
