@@ -3,7 +3,7 @@
 import React from 'react';
 import Hero from './Hero'; 
 import FeaturedMoviesAndTVShows from './FeaturedMoviesAndTv';
-import ContentSection from './ContentSection'; // Import the ContentSection component
+import ContentSection from './ContentSection'; 
 
 
 const BaseComponent = () => {
