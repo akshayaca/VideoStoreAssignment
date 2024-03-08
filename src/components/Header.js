@@ -37,7 +37,7 @@ const Header = () => {
           <FaHome />
         </Link>
         <FaUserAlt className="text-xl hover:text-blue-500 ml-4 cursor-pointer" onClick={openModal} />
-        {isModalOpen && <LoginModal closeModal={closeModal} />} {/* Render the modal component */}
+        {isModalOpen && <LoginModal closeModal={closeModal} />}
       </div>
     </header>
   );
