@@ -82,7 +82,7 @@
         "title": "Avengers: Endgame",
         "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe. The film is a thrilling conclusion to the epic saga of the Marvel Cinematic Universe.",
         "smallPoster": "Images/Avengers.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Ironman.jpg",
         "rentPrice": 4.99,
         "purchasePrice": 19.99
       },
@@ -90,9 +90,9 @@
         "id": 2,
         "type": "movie",
         "title": "Wonder",
-        "synopsis": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice. The film explores themes of heroism, sacrifice, and the nature of good and evil.",
+        "synopsis": "Based on the New York Times bestseller, WONDER tells the incredibly inspiring and heartwarming story of August Pullman, a boy with facial differences who enters fifth grade, attending a mainstream elementary school for the first time.",
         "smallPoster": "Images/Wonder.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/wondermom.jpg",
         "rentPrice": 3.99,
         "purchasePrice": 14.99
       },
@@ -102,7 +102,7 @@
         "title": "Watchmen",
         "synopsis": "In a small town where everyone knows everyone, a group of teenagers discover a strange series of events when they begin investigating the disappearance of a young boy. The series is a gripping mystery with complex characters and a thought-provoking exploration of morality.",
         "smallPoster": "Images/Watchmen.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/watch.jpg",
         "rentPrice": 2.99,
         "purchasePrice": 9.99
       },
@@ -112,7 +112,7 @@
         "title": "The Shawshank Redemption",
         "synopsis": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia. The series is renowned for its intricate plot, compelling characters, and stunning visual effects.",
         "smallPoster": "Images/The Shawshank.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/srdm.jpg",
         "rentPrice": 2.99,
         "purchasePrice": 9.99
       },
@@ -122,7 +122,7 @@
         "title": "The Queen's Gambit",
         "synopsis": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency. The film is a moving exploration of friendship, hope, and the power of the human spirit.",
         "smallPoster": "Images/The Queen's Gambit.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/queen.jpg",
         "rentPrice": 3.49,
         "purchasePrice": 12.99
       },
@@ -132,7 +132,7 @@
         "title": "The Greatest Showman",
         "synopsis": "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to create and sell the purest methamphetamine on the market. The series is a gripping drama that delves into the dark underworld of drug trafficking.",
         "smallPoster": "Images/The Greatest Showman.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/show.jpg",
         "rentPrice": 2.99,
         "purchasePrice": 9.99
       },
@@ -142,7 +142,7 @@
         "title": "Forrest Gump",
         "synopsis": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart. The film is a heartwarming journey through decades of American history.",
         "smallPoster": "Images/Forrest Gump.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/forrest.jpg",
         "rentPrice": 3.99,
         "purchasePrice": 14.99
       },
@@ -152,7 +152,7 @@
         "title": "The Office",
         "synopsis": "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium. The series is a hilarious and relatable portrayal of office life, featuring memorable characters and laugh-out-loud moments.",
         "smallPoster": "Images/The Office.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/office.jpg",
         "rentPrice": 2.99,
         "purchasePrice": 9.99
       },
@@ -162,7 +162,7 @@
         "title": "Parks and Recreation",
         "synopsis": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O. The film is a mind-bending thriller that explores the nature of reality and the power of the human mind.",
         "smallPoster": "Images/Parks and Recreation.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/parks.jpg",
         "rentPrice": 4.49,
         "purchasePrice": 16.99
       },
@@ -172,7 +172,7 @@
         "title": "Friends",
         "synopsis": "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan. The series is a beloved classic, known for its witty humor, memorable characters, and heartwarming moments.",
         "smallPoster": "Images/Friends.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/fri.jpg",
         "rentPrice": 2.99,
         "purchasePrice": 9.99
       },
@@ -182,7 +182,7 @@
         "title": "Finding Nemo",
         "synopsis": "Marlin, a clownfish, embarks on a journey across the ocean to find his son, Nemo, who has been captured by a diver and placed in a fish tank. Along the way, Marlin encounters various sea creatures, including Dory, a forgetful blue tang fish, who helps him in his quest.",
         "smallPoster": "Images/Finding Nemo.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/nemo.jpg",
         "rentPrice": 2.99,
         "purchasePrice": 9.99
       },
@@ -192,7 +192,7 @@
         "title": "Brooklyn NineNine",
         "synopsis": "Set in the fictional 99th precinct of the New York City Police Department in Brooklyn, the series follows a team of detectives led by the immature but talented Detective Jake Peralta. Full of humor, witty banter, and quirky characters, Brooklyn Nine-Nine delivers laughs and heartwarming moments.",
         "smallPoster": "Images/Brooklyn NineNine.jpg",
-        "largePoster": "Images/Avengers.jpg",
+        "largePoster": "Images/99.jpg",
         "rentPrice": 2.99,
         "purchasePrice": 9.99
       }
