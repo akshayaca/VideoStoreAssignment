@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FaUserAlt, FaBars, FaHome } from 'react-icons/fa';
+import { FaUserAlt, FaBars, FaHome, FaHeart } from 'react-icons/fa'; 
 import { IoMdFilm } from 'react-icons/io';
 import { MdLiveTv } from 'react-icons/md';
-import LoginModal from './LoginModal'; 
+import LoginModal from './LoginModal';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -32,16 +32,18 @@ const Header = () => {
           </Link>
         </nav>
       </div>
-      {/* Title Container */}
-      <div className="flex-grow flex justify-center">
-        <h1 className="text-xl md:text-2xl font-bold">Two Watch</h1>
+      
+      <div className="flex-grow flex justify-center items-center">
+        <FaHeart className="ml-2 text-white-500 text-2xl" />
+        <h1 className="text-xl md:text-2xl font-bold px-2">Two Watch</h1>
+        
       </div>
       <div className="flex items-center">
         <Link to="/" className="text-2xl hover:text-blue-500 ml-4 cursor-pointer">
           <FaHome />
         </Link>
         <FaUserAlt className="text-2xl hover:text-blue-500 ml-4 cursor-pointer" onClick={openModal} />
-        {isModalOpen && <LoginModal closeModal={closeModal} />} 
+        {isModalOpen && <LoginModal closeModal={closeModal} />}
       </div>
     </header>
   );
