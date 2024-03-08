@@ -74,5 +74,129 @@
       "poster": "Images/Avengers.jpg",
       "description": "Description for TV Show 6"
     }
-  ]
-}
+  ],
+  
+    "collection": [
+      {
+        "id": 1,
+        "type": "movie",
+        "title": "Avengers: Endgame",
+        "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 4.99,
+        "purchasePrice": 19.99
+      },
+      {
+        "id": 2,
+        "type": "movie",
+        "title": "The Dark Knight",
+        "synopsis": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 3.99,
+        "purchasePrice": 14.99
+      },
+      {
+        "id": 3,
+        "type": "tv",
+        "title": "Stranger Things",
+        "synopsis": "In a small town where everyone knows everyone, a group of teenagers discover a strange series of events when they begin investigating the disappearance of a young boy.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 2.99,
+        "purchasePrice": 9.99
+      },
+      {
+        "id": 4,
+        "type": "tv",
+        "title": "Game of Thrones",
+        "synopsis": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 2.99,
+        "purchasePrice": 9.99
+      },
+      {
+        "id": 5,
+        "type": "movie",
+        "title": "The Shawshank Redemption",
+        "synopsis": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 3.49,
+        "purchasePrice": 12.99
+      },
+      {
+        "id": 6,
+        "type": "tv",
+        "title": "Breaking Bad",
+        "synopsis": "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to create and sell the purest methamphetamine on the market.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 2.99,
+        "purchasePrice": 9.99
+      },
+      {
+        "id": 7,
+        "type": "movie",
+        "title": "Forrest Gump",
+        "synopsis": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 3.99,
+        "purchasePrice": 14.99
+      },
+      {
+        "id": 8,
+        "type": "tv",
+        "title": "The Office (US)",
+        "synopsis": "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 2.99,
+        "purchasePrice": 9.99
+      },
+      {
+        "id": 9,
+        "type": "movie",
+        "title": "Inception",
+        "synopsis": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 4.49,
+        "purchasePrice": 16.99
+      },
+      {
+        "id": 10,
+        "type": "tv",
+        "title": "Friends",
+        "synopsis": "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 2.99,
+        "purchasePrice": 9.99
+      },
+      {
+        "id": 11,
+        "type": "tv",
+        "title": "Friends",
+        "synopsis": "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 2.99,
+        "purchasePrice": 9.99
+      },
+      {
+        "id": 12,
+        "type": "tv",
+        "title": "Friends",
+        "synopsis": "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.",
+        "smallPoster": "Images/Avengers.jpg",
+        "largePoster": "Images/Avengers.jpg",
+        "rentPrice": 2.99,
+        "purchasePrice": 9.99
+      }
+    ]
+  }
+  
