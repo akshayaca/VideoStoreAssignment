@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 const LoginModal = ({ closeModal }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLogin, setIsLogin] = useState(true); // True for login, false for signup
+  const [isLogin, setIsLogin] = useState(true); 
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -21,13 +21,12 @@ const LoginModal = ({ closeModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can perform login/signup logic, for demo purposes, just showing an alert
     if (isLogin) {
       alert('Login successful!');
     } else {
       alert('Signup successful!');
     }
-    closeModal(); // Close the modal after successful login/signup
+    closeModal(); 
   };
 
   return (
@@ -43,7 +42,7 @@ const LoginModal = ({ closeModal }) => {
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 p-2 block w-full border rounded-md border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               required
-              style={{ color: 'black', cursor: 'text' }} // Inline style for text color and cursor
+              style={{ color: 'black', cursor: 'text' }} 
             />
           </div>
           <div className="mb-6">
@@ -54,14 +53,14 @@ const LoginModal = ({ closeModal }) => {
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 p-2 block w-full border rounded-md border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               required
-              style={{ color: 'black', cursor: 'text' }} // Inline style for text color and cursor
+              style={{ color: 'black', cursor: 'text' }} 
             />
           </div>
           <div className="flex items-center justify-between">
             <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
               {isLogin ? 'Login' : 'Sign Up'}
             </button>
-            <p className="text-sm text-white">
+            <p className="text-sm text-white px-2">
               {isLogin ? "Don't have an account?" : 'Already have an account?'}
               <button
                 type="button"
