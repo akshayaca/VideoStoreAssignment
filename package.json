@@ -2,6 +2,7 @@
   "name": "videoapp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://akshayaca.github.io/VideoStoreAssignment",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -18,7 +19,6 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
-    "homepage": "https://akshayaca.github.io/VideoStoreAssignment",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
