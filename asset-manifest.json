@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54dd4ae3.css",
+    "main.js": "/static/js/main.312d8629.js",
+    "static/media/Avengers.jpg": "/static/media/Avengers.4c12d6d4c43ea057724f.jpg",
+    "static/media/The Mandalorian.jpg": "/static/media/The Mandalorian.e533401ecc3468c7be34.jpg",
+    "static/media/ToyStory4.jpg": "/static/media/ToyStory4.37afea81f0d00d640e33.jpg",
+    "static/media/StarWars.jpg": "/static/media/StarWars.36427f6cc6597d024085.jpg",
+    "static/media/Stranger Things.jpg": "/static/media/Stranger Things.72e47ec3aaf8c69d90e4.jpg",
+    "static/media/Inception.jpg": "/static/media/Inception.857aa2b8836b975be174.jpg",
+    "static/media/Schitts Creek.jpg": "/static/media/Schitts Creek.5774f0768fa5fff7b809.jpg",
+    "static/media/The Good Place.jpg": "/static/media/The Good Place.92c792ec43f12bd19492.jpg",
+    "static/media/The Blind Side.jpg": "/static/media/The Blind Side.50294d797ae715f447d8.jpg",
+    "static/media/Game of Thrones.jpg": "/static/media/Game of Thrones.3e5c7c46d982354776f9.jpg",
+    "static/media/The Crown.jpg": "/static/media/The Crown.8fea1bfae67cc1172a4c.jpg",
+    "static/media/The Marvelous.jpg": "/static/media/The Marvelous.e88f903086f9ed15029e.jpg",
+    "static/media/The Lion King.jpg": "/static/media/The Lion King.7cc4b37bc811ae85ac4d.jpg",
+    "static/media/Up.jpg": "/static/media/Up.be7cc74e592a7f760b6a.jpg",
+    "static/media/Breaking Bad.jpg": "/static/media/Breaking Bad.675e6af652c38fe11276.jpg",
+    "index.html": "/index.html",
+    "main.54dd4ae3.css.map": "/static/css/main.54dd4ae3.css.map",
+    "main.312d8629.js.map": "/static/js/main.312d8629.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54dd4ae3.css",
+    "static/js/main.312d8629.js"
+  ]
+}
