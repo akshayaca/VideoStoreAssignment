@@ -10,12 +10,12 @@ const FeaturedMoviesAndTVShows = () => {
     const showsContainerRef = useRef(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/featuredMovies')
+        fetch('http://localhost:3001/featuredMovies')
             .then(response => response.json())
             .then(data => setFeaturedMovies(data))
             .catch(error => setError(error));
 
-        fetch('http://localhost:3000/featuredTVShows')
+        fetch('http://localhost:3001/featuredTVShows')
             .then(response => response.json())
             .then(data => setFeaturedTVShows(data))
             .catch(error => setError(error));

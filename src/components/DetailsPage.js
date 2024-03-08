@@ -13,7 +13,7 @@ const DetailsPage = () => {
             const fetchData = async () => {
                 setLoading(true);
                 try {
-                    const response = await fetch(`http://localhost:3000/collection/${id}`);
+                    const response = await fetch(`http://localhost:3001/collection/${id}`);
                     const data = await response.json();
                     setDetails(data);
                 } catch (error) {

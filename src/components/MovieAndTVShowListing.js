@@ -9,7 +9,7 @@ const MovieAndTVShowListing = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/collection');
+                const response = await fetch('http://localhost:3001/collection');
                 const data = await response.json();
                 setCollection(data);
                 setLoading(false);
