@@ -33,10 +33,11 @@ const MovieAndTVShowListing = () => {
 
     return (
         <div className="container mx-auto p-4">
+            <h2 className="text-white text-2xl font-bold mb-4 text-center">Most Watched Together Movies And TV show Listings</h2>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
                 {collection.map(item => (
                     <Link to={{ pathname: `/details/${item.id}`, state: { details: item } }} key={item.id} className="group">
-                    <div className="bg-black border border-gray-800 mx-1 my-1 flex flex-col items-center shadow-neon-blue transform group-hover:scale-105 transition-transform duration-300 rounded-lg overflow-hidden card">
+                        <div className="bg-black border border-gray-800 mx-1 my-1 flex flex-col items-center shadow-neon-blue transform group-hover:scale-105 transition-transform duration-300 rounded-lg overflow-hidden card">
                             <img src={item.smallPoster} alt={item.title} className="w-full object-cover" />
                             <p className="text-white font-semibold text-center p-2 truncate">{item.title}</p>
                         </div>

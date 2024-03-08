@@ -1,80 +1,81 @@
 {
   "featuredMovies": [
-    {
-      "id": 1,
-      "title": "Movie 1",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for Movie 1"
-    },
-    {
-      "id": 2,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for Movie 2"
-    },
-    {
-      "id": 3,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for Movie 3"
-    },
-    {
-      "id": 4,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for Movie 4"
-    },
-    {
-      "id": 5,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for Movie 5"
-    },
-    {
-      "id": 6,
-      "title": "Movie 2",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for Movie 6"
-    }
+  {
+  "id": 1,
+  "title": "Avengers",
+  "poster": "Images/Avengers.jpg",
+  "description": "A superhero ensemble film featuring iconic Marvel characters teaming up to save the world from various threats."
+  },
+  {
+  "id": 2,
+  "title": "The Lion King",
+  "poster": "Images/The Lion King.jpg",
+  "description": "A classic Disney animated film following the journey of a young lion prince reclaiming his kingdom from his evil uncle."
+  },
+  {
+  "id": 3,
+  "title": "Joker",
+  "poster": "Images/Joker.jpg",
+  "description": "A dark and gritty origin story of the infamous DC Comics supervillain, exploring themes of mental illness and societal decay."
+  },
+  {
+  "id": 4,
+  "title": "Parasite",
+  "poster": "Images/Parasite.jpg",
+  "description": "A critically acclaimed South Korean thriller film about a poor family infiltrating the lives of a wealthy household with unexpected consequences."
+  },
+  {
+  "id": 5,
+  "title": "1917",
+  "poster": "Images/1917.jpg",
+  "description": "A gripping war drama set during World War I, following two British soldiers tasked with delivering a vital message to save a battalion from a trap."
+  },
+  {
+  "id": 6,
+  "title": "Once Upon a Time in Hollywood",
+  "poster": "Images/Once Upon a Time in Hollywood.jpg",
+  "description": "A nostalgic journey through late 1960s Hollywood, intertwining the lives of a fading TV star and his stunt double with real-life events."
+  }
   ],
   "featuredTVShows": [
-    {
-      "id": 1,
-      "title": "TV Show 1",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for TV Show 1"
-    },
-    {
-      "id": 2,
-      "title": "TV Show 2",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for TV Show 2"
-    },
-    {
-      "id": 3,
-      "title": "TV Show 3",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for TV Show 3"
-    },
-    {
-      "id": 4,
-      "title": "TV Show 4",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for TV Show 4"
-    },
-    {
-      "id": 5,
-      "title": "TV Show 5",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for TV Show 5"
-    },
-    {
-      "id": 6,
-      "title": "TV Show 6",
-      "poster": "Images/Avengers.jpg",
-      "description": "Description for TV Show 6"
-    }
+  {
+  "id": 1,
+  "title": "Chernobyl",
+  "poster": "Images/Chernobyl.jpg",
+  "description": "A gripping historical drama miniseries depicting the Chernobyl nuclear disaster and its aftermath, highlighting the human cost and government cover-up."
+  },
+  {
+  "id": 2,
+  "title": "Fleabag",
+  "poster": "Images/Fleabag.jpg",
+  "description": "A dark comedy-drama series following the chaotic life of a witty and sexually adventurous woman navigating relationships and personal struggles."
+  },
+  {
+  "id": 3,
+  "title": "Mindhunter",
+  "poster": "Images/Mindhunter.jpg",
+  "description": "A psychological crime thriller series based on true events, focusing on FBI agents interviewing serial killers to understand and catch criminals."
+  },
+  {
+  "id": 4,
+  "title": "Succession",
+  "poster": "Images/Succession.jpg",
+  "description": "A satirical drama series exploring the power struggles within a wealthy media family as they vie for control of their father's empire."
+  },
+  {
+  "id": 5,
+  "title": "Watchmen",
+  "poster": "Images/Watchmen.jpg",
+  "description": "A thought-provoking superhero drama series set in an alternate reality where masked vigilantes are treated as outlaws, tackling complex social issues."
+  },
+  {
+  "id": 6,
+  "title": "Game of Thrones",
+  "poster": "Images/Game of Thrones.jpg",
+  "description": "An epic fantasy series depicting the power struggles and battles for control of the Seven Kingdoms of Westeros, based on George R.R. Martin's novels."
+  }
   ],
+  
   
     "collection": [
       {
