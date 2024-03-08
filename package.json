@@ -22,7 +22,7 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "web-vitals": "^2.1.4",
-    "homepage": "."
+    "homepage": "./VideoStoreAssignment"
   },
   "scripts": {
     "start": "react-scripts start",
