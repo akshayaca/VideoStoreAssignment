@@ -9,7 +9,7 @@ const MovieAndTVShowListing = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:3001/collection');
+                const response = await fetch('/collection'); // Assuming the server is set up to proxy requests to localhost:3001 in development
                 const data = await response.json();
                 setCollection(data);
                 setLoading(false);

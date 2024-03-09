@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const DetailsPage = () => {
     const { id } = useParams();
-    const location = useLocation();
-    const [details, setDetails] = useState(location.state ? location.state.details : null);
-    const [loading, setLoading] = useState(!details);
+    const [details, setDetails] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
     useEffect(() => {
-        if (!details) {
-            const fetchData = async () => {
-                setLoading(true);
-                try {
-                    const response = await fetch(`http://localhost:3001/collection/${id}`);
-                    const data = await response.json();
-                    setDetails(data);
-                } catch (error) {
-                    setError('Failed to fetch data');
-                } finally {
-                    setLoading(false);
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const response = await fetch(`/collection/${id}`); // Assuming the server is set up to proxy requests to localhost:3001 in development
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
                 }
-            };
+                const data = await response.json();
+                setDetails(data);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-            fetchData();
-        }
-    }, [id, details]);
+        fetchData();
+    }, [id]);
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
