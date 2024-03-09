@@ -71,13 +71,14 @@ const ContentSection = () => {
             <h3 className="text-white font-bold mb-1">Ultimate Flexibility Package for Busy Couples</h3>
             <p className="text-white mb-2">Are you and your partner struggling to find time for movie nights amidst your hectic schedules? Say goodbye to rushing through movies and hello to uninterrupted quality time together with our Ultimate Flexibility Package!</p>
             <p className="text-white">Enjoy unrestricted access to our extensive video library for an extended period each day or week, giving you the flexibility to watch movies whenever it suits you best. Whether it's a quick mid-week pick-me-up or a leisurely weekend binge, the choice is yours!</p>
-        </div>
-    </div>
+            </div>
+           <button className="bg-black text-white font-bold py-2 px-4 my-4" style={{ transition: 'background-color 300ms ease-in-out' }} onMouseEnter={e => e.currentTarget.style.backgroundColor = "#191970"} onMouseLeave={e => e.currentTarget.style.backgroundColor = "black"}>
+           Subscribe Now
+       </button>
+   </div>
 </div>
-    
-    
-        </div>
-    );
+</div>
+);
 };
 
 export default ContentSection;
