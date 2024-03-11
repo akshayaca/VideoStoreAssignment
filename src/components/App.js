@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'; // Import HashRouter
 import Header from './Header';
 import BaseComponent from './BaseComponent';
 import MovieAndTVShowListing from './MovieAndTVShowListing';
@@ -9,7 +9,7 @@ import '../css/App.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/"> {/* Use HashRouter and set the basename (if needed) */}
       <div className="App min-h-screen flex flex-col">
         <Header />
         <main className="bg-black flex-grow">
