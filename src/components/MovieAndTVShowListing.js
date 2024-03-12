@@ -9,9 +9,9 @@ const MovieAndTVShowListing = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:3001/collection');
+                const response = await fetch(`${process.env.PUBLIC_URL}/db.json`); 
                 const data = await response.json();
-                setCollection(data);
+                setCollection(data.collection); 
                 setLoading(false);
             } catch (error) {
                 setError(error);

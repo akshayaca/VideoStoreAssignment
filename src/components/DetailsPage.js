@@ -13,9 +13,10 @@ const DetailsPage = () => {
             const fetchData = async () => {
                 setLoading(true);
                 try {
-                    const response = await fetch(`http://localhost:3001/collection/${id}`);
+                    const response = await fetch(`${process.env.PUBLIC_URL}/db.json`); 
                     const data = await response.json();
-                    setDetails(data);
+                    const item = data.collection.find(item => item.id === id); 
+                    setDetails(item);
                 } catch (error) {
                     setError('Failed to fetch data');
                 } finally {
