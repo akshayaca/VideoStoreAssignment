@@ -11,16 +11,13 @@ const FeaturedMoviesAndTVShows = () => {
     const showsContainerRef = useRef(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/featuredMovies')
+        fetch(`${process.env.PUBLIC_URL}/db.json`)
             .then(response => response.json())
-            .then(data => setFeaturedMovies(data))
+            .then(data => {
+                setFeaturedMovies(data.featuredMovies); 
+                setFeaturedTVShows(data.featuredTVShows); 
+            })
             .catch(error => setError(error));
-
-        fetch('http://localhost:3001/featuredTVShows')
-            .then(response => response.json())
-            .then(data => setFeaturedTVShows(data))
-            .catch(error => setError(error));
-
         const handleClickOutside = (event) => {
             if (moviesContainerRef.current && !moviesContainerRef.current.contains(event.target)) {
                 setSelectedMovieId(null);
