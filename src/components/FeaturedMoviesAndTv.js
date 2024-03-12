@@ -60,7 +60,7 @@ const FeaturedMoviesAndTVShows = () => {
                             <p className="text-white p-2">{movie.description}</p>
                         ) : (
                             <>
-                                <img src={movie.poster} alt={movie.title} className="w-full h-full" />
+                                <img src={`${process.env.PUBLIC_URL}/${movie.poster}`} alt={movie.title} className="w-full h-full" />
                                 <p className="text-white font-semibold text-center p-2">{movie.title}</p>
                             </>
                         )}
@@ -76,7 +76,7 @@ const FeaturedMoviesAndTVShows = () => {
                             <p className="text-white p-2">{show.description}</p>
                         ) : (
                             <>
-                                <img src={show.poster} alt={show.title} className="w-full h-full object-cover" />
+                                <img src={`${process.env.PUBLIC_URL}/${show.poster}`} alt={show.title} className="w-full h-full object-cover" />
                                 <p className="text-white font-semibold text-center p-2">{show.title}</p>
                             </>
                         )}
