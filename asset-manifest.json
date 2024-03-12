@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/VideoStoreAssignment/static/css/main.1f5b53fb.css",
-    "main.js": "/VideoStoreAssignment/static/js/main.d0f63b26.js",
+    "main.js": "/VideoStoreAssignment/static/js/main.605651cd.js",
     "static/media/Avengers.jpg": "/VideoStoreAssignment/static/media/Avengers.4c12d6d4c43ea057724f.jpg",
     "static/media/The Mandalorian.jpg": "/VideoStoreAssignment/static/media/The Mandalorian.e533401ecc3468c7be34.jpg",
     "static/media/ToyStory4.jpg": "/VideoStoreAssignment/static/media/ToyStory4.37afea81f0d00d640e33.jpg",
@@ -19,10 +19,10 @@
     "static/media/Breaking Bad.jpg": "/VideoStoreAssignment/static/media/Breaking Bad.675e6af652c38fe11276.jpg",
     "index.html": "/VideoStoreAssignment/index.html",
     "main.1f5b53fb.css.map": "/VideoStoreAssignment/static/css/main.1f5b53fb.css.map",
-    "main.d0f63b26.js.map": "/VideoStoreAssignment/static/js/main.d0f63b26.js.map"
+    "main.605651cd.js.map": "/VideoStoreAssignment/static/js/main.605651cd.js.map"
   },
   "entrypoints": [
     "static/css/main.1f5b53fb.css",
-    "static/js/main.d0f63b26.js"
+    "static/js/main.605651cd.js"
   ]
 }
