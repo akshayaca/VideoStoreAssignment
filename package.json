@@ -18,6 +18,7 @@
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
+    "serve": "^14.2.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
@@ -30,7 +31,7 @@
     "test": "react-scripts test",
     "server": "json-server --watch db.json --port 3001",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
