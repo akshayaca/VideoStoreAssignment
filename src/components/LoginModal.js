@@ -12,7 +12,7 @@ const LoginModal = ({ closeModal, onLoginSuccess }) => {
   const modalRef = useRef(null);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
-
+  const { setIsAuthenticated } = useAuth();
   
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const LoginModal = ({ closeModal, onLoginSuccess }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLogin) {
-      AuthService.login(email, password)
+      AuthService.login(email, password,setIsAuthenticated)
       .then((data) => {
         if(data && data.accessToken) {
           

@@ -8,13 +8,16 @@ import LoginModal from './LoginModal';
 import { Link } from 'react-router-dom';
 import AuthService from '../services/AuthService';
 import Search from './Search';
+import { useAuth } from '../contexts/AuthContext';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { isAuthenticated, setIsAuthenticated } = useAuth(); // Correct way to destructure properties from an object
+
   const navigate = useNavigate()
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -22,8 +25,8 @@ const Header = () => {
   }, []);
 
   const logout = () => {
-    AuthService.logout();
-    setIsAuthenticated(false); // Update state to reflect logout
+    AuthService.logout(setIsAuthenticated);
+    setIsAuthenticated(false);
     navigate('/'); // Redirect to home
   };
 
