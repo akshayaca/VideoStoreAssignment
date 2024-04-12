@@ -7,7 +7,8 @@ import MovieAndTVShowListing from './MovieAndTVShowListing';
 import DetailsPage from './DetailsPage';
 import AllMovie from './AllMovie'; // Adjust path as necessary
 import SearchResults from './SearchResults';
-
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfUse from './TermsOfUse';
 import Footer from './Footer';
 import '../css/App.css';
 import AllTv from './AllTv';
@@ -27,6 +28,8 @@ const App = () => {
           <Route path="/movie" element={<AllMovie />} /> 
           <Route path="/tv" element={<AllTv />} /> 
           <Route path="/search-results" element={<SearchResults />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
        
       </main>
