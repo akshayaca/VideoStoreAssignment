@@ -1,7 +1,7 @@
 // src/services/AuthService.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:2319/api'; // Adjust the port if different
+const API_URL = 'http://localhost:2319/api'; 
 
 const login = (email, password,setIsAuthenticated) => {
   return axios.post(`${API_URL}/login`, { email, password })
@@ -30,14 +30,14 @@ const register = (firstName, lastName, email, password) => {
     password,
   })
   .catch((error) => {
-    // Throw the error to be caught by the caller
+   
     throw error;
   });
 };
 const isAuthenticated = () => {
-  // Check if the 'user' item exists in localStorage
+  
   const user = localStorage.getItem('user');
-  return !!localStorage.getItem('user'); // The double exclamation converts the value to a boolean
+  return !!localStorage.getItem('user'); 
 };
 const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem('user'));

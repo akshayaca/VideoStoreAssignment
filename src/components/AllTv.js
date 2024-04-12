@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import MovieTvService from '../services/MovieTvService'; // Ensure the import path is correct
+import MovieTvService from '../services/MovieTvService'; 
 
 const AllTv = () => {
   const [tvShows, setTvShows] = useState([]);
@@ -8,7 +8,7 @@ const AllTv = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    MovieTvService.getAllTvShows() // No need to pass 'tv' since the service is already configured
+    MovieTvService.getAllTvShows() 
       .then(data => {
         setTvShows(data);
         setLoading(false);
@@ -28,7 +28,7 @@ const AllTv = () => {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
             {tvShows.map(item => (
                 <Link 
-                    to={`/${item.id}/${item.type}`} // Updated to link to a dynamic path for individual TV shows
+                    to={`/${item.id}/${item.type}`} 
                     key={item.id} 
                     className="group"
                 >

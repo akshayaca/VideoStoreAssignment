@@ -1,11 +1,11 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'; // Removed HashRouter import
+import { Routes, Route } from 'react-router-dom'; 
 import LoginModal from './LoginModal';
 import Header from './Header';
 import BaseComponent from './BaseComponent';
 import MovieAndTVShowListing from './MovieAndTVShowListing';
 import DetailsPage from './DetailsPage';
-import AllMovie from './AllMovie'; // Adjust path as necessary
+import AllMovie from './AllMovie'; 
 import SearchResults from './SearchResults';
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsOfUse from './TermsOfUse';

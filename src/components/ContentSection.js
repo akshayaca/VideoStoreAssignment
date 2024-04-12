@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext'; // Import the useAuth hook to access authentication status
+import { useAuth } from '../contexts/AuthContext'; 
 import m1 from '../img/Schitts Creek.jpg';
 import m2 from '../img/The Blind Side.jpg';
 import m3 from '../img/The Good Place.jpg';
@@ -20,12 +20,12 @@ const ContentSection = () => {
     const [selectedItemId, setSelectedItemId] = useState(null);
     const containerRef = useRef(null);
     const navigate = useNavigate();
-    const { isAuthenticated } = useAuth(); // Destructure to use the isAuthenticated flag
+    const { isAuthenticated } = useAuth(); 
     const scrollContainerRef = useRef(null);
     const [isHovering, setIsHovering] = useState(false);
 
     const navigateToMovieListing = () => {
-        navigate('/moviestvlisting'); // Define the route to navigate to the movie listing page.
+        navigate('/moviestvlisting'); 
     };
 
     useEffect(() => {

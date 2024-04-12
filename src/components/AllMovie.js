@@ -34,7 +34,7 @@ const AllMovies = () => {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
             {movies.map(item => (
                 <Link 
-                    to={`/${item.id}/${item.type}`} // Updated to link to a dynamic path for individual TV shows
+                    to={`/${item.id}/${item.type}`} 
                     key={item.id} 
                     className="group"
                 >

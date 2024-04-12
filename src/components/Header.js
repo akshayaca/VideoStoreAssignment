@@ -13,7 +13,7 @@ import { useAuth } from '../contexts/AuthContext';
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { isAuthenticated, setIsAuthenticated } = useAuth(); // Correct way to destructure properties from an object
+  const { isAuthenticated, setIsAuthenticated } = useAuth(); 
 
   const navigate = useNavigate()
   const [isSearchOpen, setIsSearchOpen] = useState(false);

@@ -38,7 +38,7 @@ const LoginModal = ({ closeModal, onLoginSuccess }) => {
           if (typeof onLoginSuccess === 'function') {
             onLoginSuccess();
             
-          } // This callback should set the isAuthenticated state in Header
+          } 
           closeModal();
           navigate('/');
         } else {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:2319/api/legal'; // Adjust the base URL based on your backend configuration
+const API_BASE_URL = 'http://localhost:2319/api/legal'; 
 
 // Fetch Terms of Use
 const getTermsOfUse = async () => {

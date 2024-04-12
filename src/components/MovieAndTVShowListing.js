@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MovieAndTVService from '../services/MovieTvService';
-import { useAuth } from '../contexts/AuthContext'; // Import useAuth
+import { useAuth } from '../contexts/AuthContext'; 
 
 const MovieAndTVShowListing = () => {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const { isAuthenticated } = useAuth(); // Use the useAuth hook
+    const { isAuthenticated } = useAuth(); 
 
     useEffect(() => {
         MovieAndTVService.getAllMovieAndTVs()
