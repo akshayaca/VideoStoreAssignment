@@ -1,5 +1,6 @@
 	
 import React, { useState, useEffect, useRef } from 'react';
+import FeaturedService from '../services/FeaturedService'; 
 
 const FeaturedMoviesAndTVShows = () => {
     const [featuredMovies, setFeaturedMovies] = useState([]);
@@ -11,13 +12,17 @@ const FeaturedMoviesAndTVShows = () => {
     const showsContainerRef = useRef(null);
 
     useEffect(() => {
-        fetch(`${process.env.PUBLIC_URL}/db.json`)
-            .then(response => response.json())
-            .then(data => {
-                setFeaturedMovies(data.featuredMovies); 
-                setFeaturedTVShows(data.featuredTVShows); 
-            })
-            .catch(error => setError(error));
+        FeaturedService.getFeaturedMovies()
+        .then(movies => {
+            setFeaturedMovies(movies);
+        })
+        .catch(error => setError(error));
+
+    FeaturedService.getFeaturedTvShows()
+        .then(shows => {
+            setFeaturedTVShows(shows);
+        })
+        .catch(error => setError(error));
         const handleClickOutside = (event) => {
             if (moviesContainerRef.current && !moviesContainerRef.current.contains(event.target)) {
                 setSelectedMovieId(null);

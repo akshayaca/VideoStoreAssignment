@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
-import { FaUserAlt, FaBars, FaHome, FaHeart } from 'react-icons/fa'; 
+import React, { useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaUserAlt, FaBars, FaHome, FaHeart,FaSearch } from 'react-icons/fa'; 
 import { IoMdFilm } from 'react-icons/io';
 import { MdLiveTv } from 'react-icons/md';
+import { FiLogOut } from 'react-icons/fi';
 import LoginModal from './LoginModal';
 import { Link } from 'react-router-dom';
+import AuthService from '../services/AuthService';
+import Search from './Search';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate()
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    setIsAuthenticated(!!user);
+  }, []);
+
+  const logout = () => {
+    AuthService.logout();
+    setIsAuthenticated(false); // Update state to reflect logout
+    navigate('/'); // Redirect to home
+  };
+
+  const handleLoginSuccess = () => {
+    setIsAuthenticated(true);
+  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -16,20 +38,23 @@ const Header = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const openSearch = () => setIsSearchOpen(true);
+  const closeSearch = () => setIsSearchOpen(false);
+
 
   return (
     <header className="bg-black text-white flex justify-between items-center p-4 sticky top-0 z-50">
       <div className="flex-1 flex items-center justify-start">
         <FaBars className="text-2xl cursor-pointer mr-4 md:hidden" onClick={() => setIsNavOpen(!isNavOpen)} />
         <nav className={`${isNavOpen ? 'flex' : 'hidden'} absolute flex-col bg-black w-full p-4 top-full left-0 md:static md:flex md:flex-row md:items-center md:w-auto md:p-0 md:top-auto md:left-auto md:bg-transparent overflow-auto max-h-60 md:max-h-full`}>
-          <Link to="/moviestvlisting" className="flex items-center gap-2 hover:text-blue-500 mb-2 md:mb-0 md:mr-4">
-            <IoMdFilm className="text-2xl" />
-            <span className="font-bold text-2xl">Movies</span>
-          </Link>
-          <Link to="/moviestvlisting" className="flex items-center gap-2 hover:text-blue-500 mb-2 md:mb-0">
-            <MdLiveTv className="text-2xl" />
-            <span className="font-bold text-2xl">TV Shows</span>
-          </Link>
+        <Link to="/movie" className="flex items-center gap-2 hover:text-blue-500 mb-2 md:mb-0 md:mr-4">
+        <IoMdFilm className="text-2xl" />
+        <span className="font-bold text-2xl">Movies</span>
+      </Link>
+      <Link to="/tv" className="flex items-center gap-2 hover:text-blue-500 mb-2 md:mb-0">
+      <MdLiveTv className="text-2xl" />
+      <span className="font-bold text-2xl">TV Shows</span>
+    </Link>
         </nav>
       </div>
       
@@ -39,11 +64,20 @@ const Header = () => {
       </div>
       
       <div className="flex-1 flex items-center justify-end">
+      <FaSearch className="text-2xl hover:text-blue-500 cursor-pointer mr-4" onClick={openSearch} />
+       
         <Link to="/" className="text-2xl hover:text-blue-500 cursor-pointer">
-          <FaHome />
+        <FaHome />
         </Link>
-        <FaUserAlt className="text-2xl hover:text-blue-500 ml-4 cursor-pointer" onClick={openModal} />
-        {isModalOpen && <LoginModal closeModal={closeModal} />}
+        {isAuthenticated ? (
+          <button onClick={logout} className="text-2xl hover:text-blue-500 ml-4 cursor-pointer flex items-center">
+            <FiLogOut className="mr-2" /> Logout
+          </button>
+        ) : (
+          <FaUserAlt className="text-2xl hover:text-blue-500 ml-4 cursor-pointer" onClick={openModal} />
+        )}
+        {isModalOpen && <LoginModal closeModal={closeModal} onLoginSuccess={handleLoginSuccess} />}
+        {isSearchOpen && <Search onClose={closeSearch} />}
       </div>
     </header>
   );

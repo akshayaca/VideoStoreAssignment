@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
+import MovieAndTVService from '../services/MovieTvService'; 
+import { useAuth } from '../contexts/AuthContext';
 
 const DetailsPage = () => {
-    const { id } = useParams();
+    const { id, type } = useParams();
     const location = useLocation();
+    const { isAuthenticated } = useAuth(); // Destructure to use only what's needed
+ 
     const [details, setDetails] = useState(location.state ? location.state.details : null);
     const [loading, setLoading] = useState(!details);
     const [error, setError] = useState('');
 
     useEffect(() => {
-        if (!details) {
-            const fetchData = async () => {
-                setLoading(true);
-                try {
-                    const response = await fetch(`${process.env.PUBLIC_URL}/db.json`); 
-                    const data = await response.json();
-                    const item = data.collection.find(item => item.id === id); 
-                    setDetails(item);
-                } catch (error) {
-                    setError('Failed to fetch data');
-                } finally {
+        if (id) {
+            setLoading(true);
+            MovieAndTVService.getMovieOrTvByIdAndType(id, type)
+                .then(data => {
+                    setDetails(data);
                     setLoading(false);
-                }
-            };
-
-            fetchData();
+                })
+                .catch(error => {
+                    setError('Failed to fetch data');
+                    setLoading(false);
+                });
         }
-    }, [id, details]);
+    }, [id, type]);
+
+    const handleAction = (action) => {
+        if (isAuthenticated) {
+            alert(`Item added: ${action}`);
+        } else {
+            alert("You must log in to perform this action.");
+        }
+    };
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
@@ -43,10 +50,16 @@ const DetailsPage = () => {
                     <h3 className="text-xl font-bold text-white">Synopsis</h3>
                     <p className="text-white">{details.synopsis}</p>
                     <div className="flex justify-center gap-4">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button 
+                        onClick={() => handleAction(`Rent ${details.rentPrice}`)}
+                        disabled={!isAuthenticated}
+                        className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${!isAuthenticated ? "opacity-50 cursor-not-allowed" : ""}`}>
                             Rent ${details.rentPrice}
                         </button>
-                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                        <button 
+                        onClick={() => handleAction(`Buy ${details.purchasePrice}`)}
+                        disabled={!isAuthenticated}
+                        className={`bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ${!isAuthenticated ? "opacity-50 cursor-not-allowed" : ""}`}>
                             Buy ${details.purchasePrice}
                         </button>
                     </div>
@@ -58,6 +71,6 @@ const DetailsPage = () => {
             </div>
         </div>
     );
-}
+};
 
 export default DetailsPage;

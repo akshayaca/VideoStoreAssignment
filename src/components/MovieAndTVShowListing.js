@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import MovieAndTVService from '../services/MovieTvService';
+import { useAuth } from '../contexts/AuthContext'; // Import useAuth
 
 const MovieAndTVShowListing = () => {
     const [collection, setCollection] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { isAuthenticated } = useAuth(); // Use the useAuth hook
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`${process.env.PUBLIC_URL}/db.json`); 
-                const data = await response.json();
-                setCollection(data.collection); 
+        MovieAndTVService.getAllMovieAndTVs()
+            .then(data => {
+                setCollection(data);
                 setLoading(false);
-            } catch (error) {
+            })
+            .catch(error => {
                 setError(error);
                 setLoading(false);
-            }
-        };
-
-        fetchData();
+            });
     }, []);
 
     if (loading) {
@@ -35,9 +34,16 @@ const MovieAndTVShowListing = () => {
             <h2 className="text-white text-2xl font-bold mb-4 text-center">Most Watched Together Movies And TV show Listings</h2>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4">
                 {collection.map(item => (
-                    <Link to={{ pathname: `/details/${item.id}`, state: { details: item } }} key={item.id} className="group">
+                    <Link 
+                        to={{
+                            pathname: `/${item.id}/${item.type}`,
+                            state: { details: item }
+                        }} 
+                        key={item.id} 
+                        className="group"
+                    >
                         <div className="bg-black border border-gray-800 mx-1 my-1 flex flex-col items-center shadow-neon-blue transform group-hover:scale-105 transition-transform duration-300 rounded-lg overflow-hidden card">
-                            <img src={`${process.env.PUBLIC_URL}/${item.smallPoster}`}alt={item.title} className="w-60 h-full object-contain" />
+                            <img src={`${process.env.PUBLIC_URL}/${item.smallPoster}`} alt={item.title} className="w-60 h-full object-contain" />
                             <p className="text-white font-semibold text-center p-2 truncate">{item.title}</p>
                         </div>
                     </Link>

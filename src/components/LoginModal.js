@@ -1,10 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
+import AuthService from '../services/AuthService';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext'; 
 
-const LoginModal = ({ closeModal }) => {
+const LoginModal = ({ closeModal, onLoginSuccess }) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLogin, setIsLogin] = useState(true); 
+  const [isLogin, setIsLogin] = useState(true);
   const modalRef = useRef(null);
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState('');
+
+  
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -22,11 +31,36 @@ const LoginModal = ({ closeModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLogin) {
-      alert('Login successful!');
+      AuthService.login(email, password)
+      .then((data) => {
+        if(data && data.accessToken) {
+          
+          if (typeof onLoginSuccess === 'function') {
+            onLoginSuccess();
+            
+          } // This callback should set the isAuthenticated state in Header
+          closeModal();
+          navigate('/');
+        } else {
+          // Handle no access token received
+          setErrorMessage("No access token received");
+      }
+  }
+      )
+        .catch((error) => {
+          console.error('Login error:', error);
+          setErrorMessage(error.response.data.message || "An error occurred during login.");
+        });
     } else {
-      alert('Signup successful!');
+      AuthService.register(firstName, lastName, email, password)
+        .then(() => {
+          setIsLogin(true); 
+          setErrorMessage("User registered successfully. Please login.");
+        })
+        .catch((error) => {
+          setErrorMessage(error.response.data.message || "An error occurred during signup.");
+        });
     }
-    closeModal(); 
   };
 
   return (
@@ -34,6 +68,32 @@ const LoginModal = ({ closeModal }) => {
       <div ref={modalRef} className="bg-black p-6 rounded-lg border border-blue">
         <h2 className="text-2xl font-bold mb-4">{isLogin ? 'Login' : 'Sign Up'}</h2>
         <form onSubmit={handleSubmit}>
+          {!isLogin && (
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-white-700">First Name</label>
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="mt-1 p-2 block w-full border rounded-md border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required
+                style={{ color: 'black', cursor: 'text' }}
+              />
+            </div>
+          )}
+          {!isLogin && (
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-white-700">Last Name</label>
+              <input
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                className="mt-1 p-2 block w-full border rounded-md border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required
+                style={{ color: 'black', cursor: 'text' }}
+              />
+            </div>
+          )}
           <div className="mb-4">
             <label className="block text-sm font-medium text-white-700">Email</label>
             <input
@@ -42,7 +102,7 @@ const LoginModal = ({ closeModal }) => {
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 p-2 block w-full border rounded-md border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               required
-              style={{ color: 'black', cursor: 'text' }} 
+              style={{ color: 'black', cursor: 'text' }}
             />
           </div>
           <div className="mb-6">
@@ -53,9 +113,11 @@ const LoginModal = ({ closeModal }) => {
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 p-2 block w-full border rounded-md border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               required
-              style={{ color: 'black', cursor: 'text' }} 
+              style={{ color: 'black', cursor: 'text' }}
             />
           </div>
+          {errorMessage && <div className="text-red-500 text-sm mb-2">{errorMessage}</div>}
+
           <div className="flex items-center justify-between">
             <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
               {isLogin ? 'Login' : 'Sign Up'}
