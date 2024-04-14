@@ -49,7 +49,7 @@ const LoginModal = ({ closeModal, onLoginSuccess }) => {
       )
         .catch((error) => {
           console.error('Login error:', error);
-          setErrorMessage(error.response.data.message || "An error occurred during login.");
+          setErrorMessage(error.response.data.message || "No User found.");
         });
     } else {
       AuthService.register(firstName, lastName, email, password)
